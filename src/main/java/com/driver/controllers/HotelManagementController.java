@@ -20,9 +20,14 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/hotel")
 public class HotelManagementController {
+    HashMap<String, Booking>  hs= new HashMap<>();
+
 
     @PostMapping("/add-hotel")
     public String addHotel(@RequestBody Hotel hotel){
+
+
+
 
         //You need to add an hotel to the database
         //incase the hotelName is null or the hotel Object is null return an empty a FAILURE
@@ -35,6 +40,8 @@ public class HotelManagementController {
 
     @PostMapping("/add-user")
     public Integer addUser(@RequestBody User user){
+        String name= user.getName();
+
 
         //You need to add a User Object to the database
         //Assume that user will always be a valid user and return the aadharCardNo of the user
